@@ -1,0 +1,134 @@
+/* Global Reset and Body Setup */
+* {
+  margin: auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* App Container */
+.App {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #4a4a8a;
+}
+
+/* Input Form */
+.input-form {
+  margin-bottom: 20px;
+}
+
+.input-form input {
+  margin: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.input-form button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  background-color: #4a4a8a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.input-form button:hover {
+  background-color: #6b6bd3;
+}
+
+/* Flash Cards */
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.flash-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 200px;
+  height: 150px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  perspective: 1000px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.flash-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 10px;
+}
+
+.card-front {
+  background-color: #4a4a8a;
+  color: #fff;
+}
+
+.card-back {
+  background-color: #e8e8fc;
+  color: #4a4a8a;
+  transform: rotateY(180deg);
+}
+
+/* Delete Button */
+.flash-card button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  background-color: #ff4a4a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.flash-card button:hover {
+  background-color: #ff6b6b;
+}
